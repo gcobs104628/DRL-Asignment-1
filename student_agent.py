@@ -46,6 +46,10 @@ def get_action(obs):
     obs: tuple of (taxi_row, taxi_col, station coordinates, obstacles, passenger_look, destination_look)
     """
     state = torch.FloatTensor(obs).unsqueeze(0).to(device)
-    with torch.no_grad():
-        q_values = model(state)
-    return q_values.max(1)[1].item()
+    try:
+        with torch.no_grad():
+            q_values = model(state)
+            action = q_values.max(1)[1].item()
+    except:
+        action = random.choice([0, 1, 2, 3, 4, 5])
+    return action
