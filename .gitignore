@@ -7,3 +7,6 @@ __pycache__/
 
 # ignore eval.py
 eval.py
+ppo.py
+dqn.py
+wandb/
