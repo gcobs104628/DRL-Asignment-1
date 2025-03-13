@@ -3,9 +3,9 @@ name: Python Application Test
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ baseline ]
   pull_request:
-    branches: [ main ]
+    branches: [ baseline ]
 
 jobs:
   build:
